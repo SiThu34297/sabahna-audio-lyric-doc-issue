@@ -14,6 +14,7 @@ To use the `sabahna-audio-lyric` package, you need to pass three props to the `<
 - `lrcString`: A string containing the lyrics to be highlighted.
 - `currentTime`: A number representing the current time of the audio being played.
 - `audioStatus`: A boolean representing the audio played or paused.
+- `style`: A object style representing the lyric Main BackgroundColor, Main TextColor, Main HighlightColor, Main FontSize,  Main FontWeight and Main FontFamily.
 
 Here's an example usage of the `<LRC>` component:
 
@@ -24,10 +25,19 @@ function MyMusicPlayer() {
   const [lyrics, setLyrics] = useState('[00:00.00]First line of lyrics\n[00:10.00]Second line of lyrics\n[00:20.00]Third line of lyrics');
   const playerRef = useRef(null);
 
+  const style = {
+    mainBackColor: '#000',
+    mainTextColor: '#fff',
+    mainHighlightColor: 'red',
+    mainFontSize: '1.3em',
+    mainFontWeight: '300',
+    mainFontFamily: 'Verdana',
+  }
+
   return (
     <>
       <audio ref={playerRef} src="/path/to/audio/file.mp3" />
-      <LRC lrcString={lyrics} currentTime={playerRef?.current?.currentTime} audioStatus={audioStatus}  />
+      <LRC lrcString={lyrics} currentTime={playerRef?.current?.currentTime} audioStatus={audioStatus} style={style}  />
     </>
   );
 }
@@ -47,10 +57,20 @@ A number representing the current time of the audio being played. The `currentTi
 
 A boolean representing the audio played or paused. The `audioStatus` prop should be only true or false.
 
+### `style` (nullable)
+
+A object style representing the lyric Main BackgroundColor, Main TextColor, Main HighlightColor, Main FontSize,  Main FontWeight and Main FontFamily. The `style` prop should be only object or nullable.
+- mainBackColor: The background color of the main content area.
+- mainTextColor: The text color of the main content area.
+- mainHighlightColor: The highlight color of selected text in the main content area.
+- mainFontSize: The font size of the text in the main content area.
+- mainFontWeight: The font weight (i.e., thickness) of the text in the main content area.
+- mainFontFamily: The font family of the text in the main content area.
+
 ## Contributing
 
-Contributions are welcome! If you find a bug or have a feature request, please open an issue on the [GitHub Pages](http://github.com/SiThu34297/sabahna-react-lyric/issues).
+Contributions are welcome! If you find a bug or have a feature request, please open an issue on the [GitHub Pages](https://github.com/SiThu34297/sabahna-audio-lyric-doc-issue/issues).
 
 ## License
 
-`sabahna-audio-lyric` is licensed under the MIT License. See the [LICENSE](https://github.com/SiThu34297/sabahna-react-lyric/blob/master/LICENSE) file for more information.
+`sabahna-audio-lyric` is licensed under the MIT License. See the [LICENSE](https://github.com/SiThu34297/sabahna-audio-lyric-doc-issue/blob/master/LICENSE) file for more information.
