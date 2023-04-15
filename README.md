@@ -9,7 +9,7 @@ You can install the package using `npm`:
 
 ## Usage
 
-To use the `sabahna-audio-lyric` package, you need to pass three props to the `<LRC>` component:
+To use the `sabahna-audio-lyric` package, you need to pass three props and style props can be nullable to the `<LRC>` component:
 
 - `lrcString`: A string containing the lyrics to be highlighted.
 - `currentTime`: A number representing the current time of the audio being played.
